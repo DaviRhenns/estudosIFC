@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Exemplo de HTML e CSS</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(39, 39, 39);
+        }
+        header {
+            background-color: rgb(11, 37, 59);
+            text-align: center;
+            padding: 1%;
+            color: rgb(214, 214, 214);
+        }
+        .div_pai {
+            padding-top: 1%;
+            display: flex;
+            justify-content: center;
+        }
+        .div_filho {
+            padding: 1%;
+            background-color: rgb(240, 240, 240);
+            width: 80%;
+            border-radius: 10px;
+        }
+        .h2a {
+            text-align: center;
+        }
+        .div_pai2 {
+            padding: 1%;
+            display: flex;
+            justify-content: center;
+            gap: 1%;
+        }
+        .div_gemeo{
+            padding: 1%;
+            background-color: rgb(240, 240, 240);
+            width: 30%;
+            border-radius: 10px;   
+        }
+        .div_gemeo2{
+            padding: 1%;
+            background-color: rgb(240, 240, 240);
+            width: 49%;
+            border-radius: 10px;   
+        }
+        img {
+            border-radius: 10px;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>Exemplo de HTML e CSS</h1></header>
+
+    <div class="div_pai">
+        <div class="div_filho">
+            <h2 class="h2a">Exemplo de div centralizada</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                 standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+                a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+                Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of 
+                Lorem Ipsum.</p>
+        </div>
+    </div>
+    <div class="div_pai2">
+        <div class="div_gemeo">
+            <img src="https://ifc.edu.br/wp-content/uploads/2025/07/mapa.png" alt="">
+        </div>
+         <div class="div_gemeo2">
+            <h2 class="h2a">Exemplo de div com outra no lado</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                 standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+                a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+                Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of 
+                Lorem Ipsum. "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born 
+                and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the 
+                truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is 
+                pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely 
+                painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but 
+                because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial 
+                example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has 
+                any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a 
+                pain that produces no resultant pleasure?"</p>
+        </div>
+    </div>
+</body>
+</html>
