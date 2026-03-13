@@ -23,6 +23,11 @@
             transform: scale(1.05);
         }
 
+        .div_gemeo2:hover {
+            background-color: rgb(197, 197, 197);
+            transform: scale(1.05);
+        }
+
         body {
             font-family: "Roboto", sans-serif;
             background-color: rgb(255, 255, 255);
@@ -99,6 +104,15 @@
             text-align: center;   
         }
 
+        .div_gemeo2{
+            display: flex;
+            justify-content: center;
+            background-color: rgb(240, 240, 240);
+            width: 19.5%;
+            border-radius: 10px;
+            text-align: center;   
+        }
+
         form {
             width: 50%;
             padding-bottom: 1%;
@@ -122,6 +136,14 @@
 
         button:hover {
             background-color: #3f9042;
+        }
+        .texto_cadastrar {
+            font-size: 95%;
+            color: rgb(7, 7, 7);
+        }
+        .texto_especial {
+            font-size: 95%;
+            color: #4CAF50;
         }
     </style>
 </head>
@@ -170,6 +192,21 @@
 
             <button type="submit">Entrar</button>
         </form>
+    </div>
+
+    <div class="div_pai2">
+        <div class="div_gemeo2">
+            <p class="texto_cadastrar">Cadastrar-se no sistema como <strong class="texto_especial">SERVIDOR</strong></p>
+        </div>
+         <div class="div_gemeo2">
+            <p class="texto_cadastrar">Cadastrar-se no sistema como <strong class="texto_especial">ALUNO</strong></p>
+        </div>
+         <div class="div_gemeo2">
+            <p class="texto_cadastrar">Cadastrar-se no sistema como <strong class="texto_especial">FAMILIAR</strong></p>
+        </div>
+         <div class="div_gemeo2">
+            <p class="texto_cadastrar"><strong class="texto_especial">ÁREA PÚBLICA</strong></p>
+        </div>
     </div>
 
     <footer>
