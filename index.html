@@ -12,7 +12,7 @@
     <script src='main.js'></script>
     <style>
         footer {
-            background-color: #1fbd2f;
+            background-color: #4CAF50;
             color: rgb(246, 246, 246); 
             padding: 2px;
             text-align: center;
@@ -27,58 +27,101 @@
             font-family: "Roboto", sans-serif;
             background-color: rgb(255, 255, 255);
         }
+
         header {
-            background-color: rgb(31, 189, 47);
+            background-color: #4CAF50;
             text-align: center;
             padding: 0.5%;
             color: rgb(246, 246, 246);
         }
+
         .div_pai {
             padding-top: 1%;
             display: flex;
             justify-content: center;
         }
+
         .div_esquecidos {
             display: flex;
             justify-content: center;
         }
+
+        .div_filho_esquecido:hover {
+            transform: scale(1.05);
+            background-color: rgb(199, 199, 199);
+        }
+
+        .div_filho_esquecido {
+            background-color: rgb(240, 240, 240);
+            width: 80%;
+            border-radius: 10px;
+            text-align: center;
+        }
+
         .div_filho {
             background-color: rgb(240, 240, 240);
             width: 80%;
             border-radius: 10px;
             text-align: center;
         }
+
         .h2a {
             color: red;
         }
+
         .p_inicio {
             font-size: 90%;
             color: rgb(5, 5, 5);
         }
+
         .inicio {
             font-size: 80%;
             color: rgb(5, 5, 5);
         }
+
         .sigs {
             font-size: 90%;
-            color: rgb(0, 96, 6);
+            color: #4CAF50;
             font-weight: 700;
         }
+
         .div_pai2 {
             padding: 1%;
             display: flex;
             justify-content: center;
             gap: 1%;
         }
+
         .div_gemeo{
             background-color: rgb(240, 240, 240);
             width: 19.5%;
             border-radius: 10px;
             text-align: center;   
         }
-        img {
-            border-radius: 10px;
-            max-width: 100%;
+
+        form {
+            width: 50%;
+            padding-bottom: 1%;
+        }
+
+        input{
+            width: 100%;
+            padding: 1.5%;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        button{
+            width: 103%;
+            padding: 1.5%;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #3f9042;
         }
     </style>
 </head>
@@ -112,10 +155,23 @@
     </div>
 
     <div class="div_esquecidos">
-        <div class="div_filho">
+        <div class="div_filho_esquecido">
                 <p class="p_inicio">Esqueceu o email de confirmação, senha, ou cadastro? Clique aqui para recuperar.  </p>
         </div>
     </div>
+
+    <div class="div_pai">
+        <form>
+            <label>Nome de usuário</label>
+            <input type="text" placeholder="Digite seu usuário">
+
+            <label>Senha</label>
+            <input type="password" placeholder="Digite sua senha">
+
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
     <footer>
         <p>SIGAA | Diretoria de Tecnologia da Informação - (47) 3331-7800 | Copyright © 2026-2046 - Davi da Silva Rhenns </p>
     </footer>
