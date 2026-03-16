@@ -10,142 +10,6 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
-    <style>
-        footer {
-            background-color: #4CAF50;
-            color: rgb(246, 246, 246); 
-            padding: 2px;
-            text-align: center;
-        }
-        
-        .div_gemeo:hover {
-            background-color: rgb(199, 199, 199);
-            transform: scale(1.05);
-        }
-
-        .div_gemeo2:hover {
-            background-color: rgb(197, 197, 197);
-            transform: scale(1.05);
-        }
-
-        body {
-            font-family: "Roboto", sans-serif;
-            background-color: rgb(255, 255, 255);
-        }
-
-        header {
-            background-color: #4CAF50;
-            text-align: center;
-            padding: 0.5%;
-            color: rgb(246, 246, 246);
-        }
-
-        .div_pai {
-            padding-top: 1%;
-            display: flex;
-            justify-content: center;
-        }
-
-        .div_esquecidos {
-            display: flex;
-            justify-content: center;
-        }
-
-        .div_filho_esquecido:hover {
-            transform: scale(1.05);
-            background-color: rgb(199, 199, 199);
-        }
-
-        .div_filho_esquecido {
-            background-color: rgb(240, 240, 240);
-            width: 80%;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .div_filho {
-            background-color: rgb(240, 240, 240);
-            width: 80%;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .h2a {
-            color: red;
-        }
-
-        .p_inicio {
-            font-size: 90%;
-            color: rgb(5, 5, 5);
-        }
-
-        .inicio {
-            font-size: 80%;
-            color: rgb(5, 5, 5);
-        }
-
-        .sigs {
-            font-size: 90%;
-            color: #4CAF50;
-            font-weight: 700;
-        }
-
-        .div_pai2 {
-            padding: 1%;
-            display: flex;
-            justify-content: center;
-            gap: 1%;
-        }
-
-        .div_gemeo{
-            background-color: rgb(240, 240, 240);
-            width: 19.5%;
-            border-radius: 10px;
-            text-align: center;   
-        }
-
-        .div_gemeo2{
-            display: flex;
-            justify-content: center;
-            background-color: rgb(240, 240, 240);
-            width: 19.5%;
-            border-radius: 10px;
-            text-align: center;   
-        }
-
-        form {
-            width: 50%;
-            padding-bottom: 1%;
-        }
-
-        input{
-            width: 100%;
-            padding: 1.5%;
-            margin-top: 5px;
-            margin-bottom: 15px;
-        }
-
-        button{
-            width: 103%;
-            padding: 1.5%;
-            background: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-
-        button:hover {
-            background-color: #3f9042;
-        }
-        .texto_cadastrar {
-            font-size: 95%;
-            color: rgb(7, 7, 7);
-        }
-        .texto_especial {
-            font-size: 95%;
-            color: #4CAF50;
-        }
-    </style>
 </head>
 <body>
     <header><h2>IFC - SIGAA - Sistema Integrado de Gestão de Atividades Acadêmicas</h2></header>
@@ -158,28 +22,28 @@
         </div>
     </div>
     <div class="div_pai2">
-        <div class="div_gemeo">
+        <a href="https://sig.ifc.edu.br/sigaa/verTelaLogin.do" class="div_gemeo">
             <p class="sigs">SIGAA</p>
             <p class="inicio">(Acadêmico)</p>
-        </div>
-         <div class="div_gemeo">
+        </a>
+         <a href="https://sig.ifc.edu.br/sipac/?modo=classico" class="div_gemeo">
             <p class="sigs">SIPAC</p>
             <p class="inicio">(Administrativo)</p>
-        </div>
-         <div class="div_gemeo">
+        </a>
+         <a href="https://sig.ifc.edu.br/sigrh/login.jsf" class="div_gemeo">
             <p class="sigs">SIGRH</p>
             <p class="inicio">(Recursos Humanos)</p>
-        </div>
-         <div class="div_gemeo">
+        </a>
+         <a href="https://sig.ifc.edu.br/admin/login.jsf" class="div_gemeo">
             <p class="sigs">SIGAdmin</p>
             <p class="inicio">(Administração e Comunicação)</p>
-        </div>
+        </a>
     </div>
 
     <div class="div_esquecidos">
-        <div class="div_filho_esquecido">
-                <p class="p_inicio">Esqueceu o email de confirmação, senha, ou cadastro? Clique aqui para recuperar.  </p>
-        </div>
+        <a href="https://sig.ifc.edu.br/admin/public/recuperar_codigo.jsf" class="div_filho_esquecido">
+                <p class="p_esquecidos">Esqueceu o email de confirmação, senha, ou cadastro? Clique aqui para recuperar.  </p>
+        </a>
     </div>
 
     <div class="div_pai">
@@ -189,24 +53,27 @@
 
             <label>Senha</label>
             <input type="password" placeholder="Digite sua senha">
-
-            <button type="submit">Entrar</button>
+            <div class="pai_botao">
+                <a href="principal.html" class="submit">Entrar</a>
+            </div>
         </form>
     </div>
 
     <div class="div_pai2">
-        <div class="div_gemeo2">
+        <a href="https://sig.ifc.edu.br/admin/auto_cadastro/form.jsf?origem=2" class="div_gemeo2">
             <p class="texto_cadastrar">Cadastrar-se no sistema como <strong class="texto_especial">SERVIDOR</strong></p>
-        </div>
-         <div class="div_gemeo2">
+        </a>
+         <a href="https://sig.ifc.edu.br/sigaa/public/cadastro/discente.jsf" class="div_gemeo2">
             <p class="texto_cadastrar">Cadastrar-se no sistema como <strong class="texto_especial">ALUNO</strong></p>
-        </div>
-         <div class="div_gemeo2">
+        </a>
+         <a href="https://sig.ifc.edu.br/sigaa/public/cadastro/familiares.jsf" class="div_gemeo2">
             <p class="texto_cadastrar">Cadastrar-se no sistema como <strong class="texto_especial">FAMILIAR</strong></p>
-        </div>
-         <div class="div_gemeo2">
+        </a>
+        
+        <a href="https://sig.ifc.edu.br/sigaa/public/home.jsf" class="div_gemeo2">
             <p class="texto_cadastrar"><strong class="texto_especial">ÁREA PÚBLICA</strong></p>
-        </div>
+        </a>
+       
     </div>
 
     <footer>
