@@ -117,12 +117,12 @@ input {
 }
 
 .submit {
-    width: 150%;
+    width: 100%;
     padding: 1.5%;
     background: #4CAF50;
     color: white;
-    border: none;
     border-radius: 5px;
+    text-align: center;
 }
 
 .submit:hover {

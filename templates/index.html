@@ -8,7 +8,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Exemplo de HTML e CSS</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src='main.js'></script>
 </head>
 <body>
@@ -46,18 +46,19 @@
         </a>
     </div>
 
-    <div class="div_pai">
-        <form>
-            <label>Nome de usuário</label>
-            <input type="text" placeholder="Digite seu usuário">
+<div class="div_pai">
+    <form action="/login" method="post">
+        <label>Nome de usuário</label>
+        <input name="username" type="text" placeholder="Digite seu usuário" required>
 
-            <label>Senha</label>
-            <input type="password" placeholder="Digite sua senha">
-            <div class="pai_botao">
-                <a href="principal.html" class="submit">Entrar</a>
-            </div>
-        </form>
-    </div>
+        <label>Senha</label>
+        <input name="password" type="password" placeholder="Digite sua senha" required>
+
+        <div class="pai_botao">
+            <button type="submit" class="submit">Entrar</button>
+        </div>
+    </form>
+</div>
 
     <div class="div_pai2">
         <a href="https://sig.ifc.edu.br/admin/auto_cadastro/form.jsf?origem=2" class="div_gemeo2">
