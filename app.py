@@ -13,12 +13,13 @@ def home():
 
 @app.route("/login", methods=["POST"])
 def login():
-    username = request.form["username"]
-    password = request.form["password"]
+    username = request.form.get("username")
+    password = request.form.get("password")
 
     if username in usuarios and usuarios[username] == password:
         return "Login OK ✅"
     else:
         return "Usuário ou senha inválidos ❌"
 
-app.run(host="0.0.0.0", port=5000)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)
