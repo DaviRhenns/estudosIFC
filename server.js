@@ -9,7 +9,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// 🔥 SERVIR HTML e CSS (OPÇÃO 1)
+// 🔥 SERVIR HTML e CSS
 app.use(express.static(path.join(__dirname)));
 
 // banco de dados
@@ -30,7 +30,7 @@ db.run(`
     VALUES ('admin', '123456')
 `);
 
-// rota login
+// 🔐 rota login
 app.post("/login", (req, res) => {
     const { username, password } = req.body;
 
@@ -47,6 +47,31 @@ app.post("/login", (req, res) => {
             } else {
                 res.send("Usuário ou senha incorretos");
             }
+        }
+    );
+});
+
+// 🆕 rota cadastro
+app.post("/register", (req, res) => {
+    const { username, password } = req.body;
+
+    // validação simples
+    if (!username || !password) {
+        return res.status(400).send("Preencha todos os campos");
+    }
+
+    db.run(
+        "INSERT INTO usuarios (username, password) VALUES (?, ?)",
+        [username, password],
+        function (err) {
+            if (err) {
+                if (err.message.includes("UNIQUE")) {
+                    return res.status(400).send("Usuário já existe");
+                }
+                return res.status(500).send("Erro no servidor");
+            }
+
+            res.send("Usuário cadastrado com sucesso!");
         }
     );
 });

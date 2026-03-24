@@ -185,3 +185,9 @@ a {
     align-items: center;
     padding: 0.5%;
 }
+
+.h1_cadastro {
+    color: #4CAF50;
+    text-align: center;
+    font-size: 200%;
+}
