@@ -1,18 +1,17 @@
 const express = require("express");
 const sqlite3 = require("sqlite3").verbose();
-const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path");
 
 const app = express();
-app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 
-// 🔥 SERVIR HTML e CSS
+// middlewares
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname)));
 
-// banco de dados
+// banco
 const db = new sqlite3.Database("./database.db");
 
 // criar tabela
@@ -24,38 +23,12 @@ db.run(`
     )
 `);
 
-// usuário de teste
-db.run(`
-    INSERT OR IGNORE INTO usuarios (username, password)
-    VALUES ('admin', '123456')
-`);
-
-// 🔐 rota login
-app.post("/login", (req, res) => {
-    const { username, password } = req.body;
-
-    db.get(
-        "SELECT * FROM usuarios WHERE username = ? AND password = ?",
-        [username, password],
-        (err, row) => {
-            if (err) {
-                return res.status(500).send("Erro no servidor");
-            }
-
-            if (row) {
-                res.send("Login bem-sucedido!");
-            } else {
-                res.send("Usuário ou senha incorretos");
-            }
-        }
-    );
-});
-
-// 🆕 rota cadastro
+// rota cadastro
 app.post("/register", (req, res) => {
+    console.log("BODY:", req.body);
+
     const { username, password } = req.body;
 
-    // validação simples
     if (!username || !password) {
         return res.status(400).send("Preencha todos os campos");
     }
@@ -76,7 +49,27 @@ app.post("/register", (req, res) => {
     );
 });
 
-// iniciar servidor
+// rota login
+app.post("/login", (req, res) => {
+    const { username, password } = req.body;
+
+    db.get(
+        "SELECT * FROM usuarios WHERE username = ? AND password = ?",
+        [username, password],
+        (err, row) => {
+            if (err) {
+                return res.status(500).send("Erro no servidor");
+            }
+
+            if (row) {
+                res.send("Login bem-sucedido!");
+            } else {
+                res.send("Usuário ou senha incorretos");
+            }
+        }
+    );
+});
+
 app.listen(3000, () => {
     console.log("Servidor rodando na porta 3000");
 });

@@ -79,5 +79,30 @@
     <footer>
         <p>SIGAA | Diretoria de Tecnologia da Informação - (47) 3331-7800 | Copyright © 2026-2046 - Davi da Silva Rhenns </p>
     </footer>
+
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const username = document.querySelector("input[name='username']").value;
+    const password = document.querySelector("input[name='password']").value;
+
+    fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ username, password })
+    })
+    .then(res => res.text())
+    .then(data => {
+        alert(data); // pode trocar depois por algo mais bonito
+    })
+    .catch(err => {
+        console.error(err);
+    });
+});
+</script>
 </body>
 </html>
