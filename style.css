@@ -187,7 +187,17 @@ a {
 }
 
 .h1_cadastro {
-    color: #4CAF50;
+    color: #202020;
     text-align: center;
     font-size: 200%;
+}
+.div_pai_cadastro {
+    padding-top: 1%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(1fr, 1fr)); 
+}
+.div_filho_cadastro {
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    text-align: center;
 }

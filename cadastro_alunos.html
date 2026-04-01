@@ -12,21 +12,37 @@
 </head>
 
 <body>
-    <header>
-        <h1>Cadastro</h1>
-    </header>
+    <header><h2 cla>IFC - SIGAA - Sistema Integrado de Gestão de Atividades Acadêmicas</h2></header>
+
+    <h3 class="h1_cadastro">Cadastro de Alunos</h3>
     
-    <div class="div_pai">
+    <div class="div_pai_cadastro"> 
+        <div class="div_filho_cadastro">
+            <form action="">
+        <label>Matricula</label><br>
+        <input type="text" placeholder="digite sua matricula" required>
+
+        <label>CPF</label><br>
+        <input type="text" placeholder="digite seu CPF" required>
+
+        <label>Email</label><br>
+        <input type="email" placeholder="digite seu email" required>
+        </form>
+        </div>
+            
+        <div class="div_filho_cadastro">
         <form id="registerForm" action="/register" method="post">
         <label>Nome de usuário</label><br>
-        <input name="username" type="text" required><br><br>
+        <input name="username" type="text" placeholder="crie seu nome de usuario" required>
 
         <label>Senha</label><br>
-        <input name="password" type="password" required><br><br>
+        <input name="password" type="password" placeholder="crie sua senha" required>
 
         <button type="submit" class="submit">Cadastrar</button>
-    </form>
-    </div>
+        </form>
+        </div>
+    </div>   
+     
     
 
     <p id="mensagem"></p>
@@ -38,7 +54,7 @@
             const username = document.querySelector("input[name='username']").value;
             const password = document.querySelector("input[name='password']").value;
 
-            fetch("http://localhost:3000/register", {
+            fetch("https://upgraded-space-funicular-5g9jqqpj9vwghv6w-3000.app.github.dev/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -47,10 +63,15 @@
             })
             .then(res => res.text())
             .then(data => {
-                document.getElementById("mensagem").innerText = data;
+                if (data === "Usuário cadastrado com sucesso!") {
+                    window.location.href = 'principal.html';
+                } else {
+                    document.getElementById("mensagem").innerText = data;
+                }
             })
             .catch(err => {
                 console.error(err);
+                document.getElementById("mensagem").innerText = "Erro na conexão";
             });
         });
     </script>

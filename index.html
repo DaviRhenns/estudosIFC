@@ -46,7 +46,7 @@
     </div>
 
 <div class="div_pai">
-    <form action="https://upgraded-space-funicular-5g9jqqpj9vwghv6w-3000.app.github.dev/login" method="post">
+    <form id="loginForm" action="https://upgraded-space-funicular-5g9jqqpj9vwghv6w-3000.app.github.dev/login" method="post">
         <label>Nome de usuário</label>
         <input name="username" type="text" placeholder="Digite seu usuário" required>
 
@@ -88,7 +88,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
     const username = document.querySelector("input[name='username']").value;
     const password = document.querySelector("input[name='password']").value;
 
-    fetch("http://localhost:3000/login", {
+    fetch("https://upgraded-space-funicular-5g9jqqpj9vwghv6w-3000.app.github.dev/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -97,10 +97,15 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
     })
     .then(res => res.text())
     .then(data => {
-        alert(data); // pode trocar depois por algo mais bonito
+        if (data === "Login bem-sucedido!") {
+            window.location.href = 'principal.html';
+        } else {
+            alert(data);
+        }
     })
     .catch(err => {
         console.error(err);
+        alert("Erro na conexão");
     });
 });
 </script>
